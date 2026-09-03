@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './navbar.css'
 
 const links = [
@@ -8,18 +8,24 @@ const links = [
   { to: '/ventas', label: 'Ventas' },
 ]
 
-function Navbar() {
+function Navbar({ user, onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname])
 
+  const handleLogout = () => {
+    onLogout()
+    navigate('/login', { replace: true })
+  }
+
   return (
     <header className="navbar-shell">
       <nav className="navbar" aria-label="Navegación principal">
-        <NavLink className="navbar-brand" to="/" aria-label="Inventario Control - Inicio">
+        <NavLink className="navbar-brand" to="/" aria-label="Vera - Inicio">
           <span className="brand-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" focusable="false">
               <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" />
@@ -59,9 +65,17 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="navbar-status" title="Estado del sistema">
-            <span className="status-dot" aria-hidden="true" />
-            <span>Sistema activo</span>
+          <div className="navbar-account">
+            <div className="admin-chip" title="Sesión actual">
+              <span className="admin-avatar">A</span>
+              <span className="admin-copy">
+                <strong>{user?.name || 'Administrador'}</strong>
+                <small>Admin</small>
+              </span>
+            </div>
+            <button className="logout-button" type="button" onClick={handleLogout}>
+              Cerrar sesión
+            </button>
           </div>
         </div>
       </nav>
