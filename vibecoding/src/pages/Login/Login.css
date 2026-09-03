@@ -1,0 +1,319 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(480px, 1.1fr);
+  background: #f8fafc;
+  color: #172b35;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.login-brand-panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 56px;
+  background: linear-gradient(145deg, #0f766e 0%, #0d9488 58%, #115e59 100%);
+  color: #fff;
+}
+
+.login-brand-panel::before,
+.login-brand-panel::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.login-brand-panel::before {
+  width: 340px;
+  height: 340px;
+  top: -130px;
+  right: -110px;
+}
+
+.login-brand-panel::after {
+  width: 240px;
+  height: 240px;
+  bottom: -100px;
+  left: -70px;
+}
+
+.login-brand-content {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 100%);
+}
+
+.login-logo {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 18px 38px rgba(3, 68, 63, 0.18);
+}
+
+.login-logo svg {
+  width: 35px;
+  height: 35px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.login-eyebrow,
+.login-kicker {
+  margin: 0 0 8px;
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.login-eyebrow { color: #ccfbf1; }
+.login-kicker { color: #0f766e; }
+
+.login-brand-content h1 {
+  margin: 0;
+  font-size: clamp(3.6rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.login-brand-description {
+  max-width: 390px;
+  margin: 24px 0 34px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.login-feature-list {
+  display: grid;
+  gap: 14px;
+  color: #ecfdf5;
+  font-size: 0.93rem;
+  font-weight: 650;
+}
+
+.login-feature-list div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.login-feature-list span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.login-form-panel {
+  display: grid;
+  place-items: center;
+  padding: 48px 30px;
+}
+
+.login-card {
+  width: min(440px, 100%);
+}
+
+.login-card-heading {
+  margin-bottom: 30px;
+}
+
+.login-mobile-logo { display: none; }
+
+.login-card-heading h2 {
+  margin: 0 0 10px;
+  color: #102a43;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  letter-spacing: -0.035em;
+}
+
+.login-card-heading > p:last-child {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.login-form {
+  display: grid;
+  gap: 19px;
+}
+
+.login-field {
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.login-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid #dbe3ea;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.login-input-wrap:focus-within {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+.login-input-wrap svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.login-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #172b35;
+  font: inherit;
+}
+
+.login-input-wrap input::placeholder { color: #a4b0bd; }
+
+.password-toggle {
+  border: 0;
+  background: none;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.remember-option {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #64748b;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+
+.remember-option input { accent-color: #0f766e; }
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 13px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fff7f7;
+  color: #b42318;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.login-error span {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fee2e2;
+  font-weight: 900;
+}
+
+.login-submit {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #0f766e;
+  color: #fff;
+  font-size: 0.94rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 11px 24px rgba(15, 118, 110, 0.18);
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.login-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #0d6f68;
+}
+
+.login-submit:disabled { opacity: 0.7; cursor: wait; }
+.login-submit span { font-size: 1.2rem; }
+
+.demo-credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 18px;
+  margin-top: 24px;
+  padding: 15px 16px;
+  border: 1px dashed #b8d9d5;
+  border-radius: 12px;
+  background: #f0fdfa;
+  color: #475569;
+  font-size: 0.79rem;
+}
+
+.demo-credentials strong {
+  grid-column: 1 / -1;
+  margin-bottom: 3px;
+  color: #0f766e;
+}
+
+.demo-credentials code {
+  color: #0f4f4a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 800;
+}
+
+.login-security-note {
+  margin: 18px 0 0;
+  color: #94a3b8;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .login-page { grid-template-columns: 1fr; }
+  .login-brand-panel { display: none; }
+  .login-form-panel { min-height: 100vh; padding: 30px 20px; }
+  .login-mobile-logo {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #0f766e;
+    font-size: 2rem;
+    font-weight: 850;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (max-width: 440px) {
+  .demo-credentials { grid-template-columns: 1fr; }
+}
